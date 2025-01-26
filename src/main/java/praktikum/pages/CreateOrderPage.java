@@ -11,7 +11,7 @@ import java.util.Objects;
 
 
 public class CreateOrderPage {
-    private WebDriver driver;
+    private final WebDriver driver;
 
     //Кнопка куки
     private final By cookieButton = By.id("rcc-confirm-button");
