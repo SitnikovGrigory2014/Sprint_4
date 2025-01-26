@@ -21,8 +21,8 @@ public class SampleWebTest {
 
         mainPage.typeOrderId();
 
-        mainPage.clickOnGoButton();
+        var statusPage = mainPage.clickOnGoButton();
 
-        mainPage.checkNotFoundMessage();
+        statusPage.checkNotFoundMessage();
     }
 }

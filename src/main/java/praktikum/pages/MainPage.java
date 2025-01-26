@@ -12,7 +12,7 @@ import static org.junit.Assert.assertTrue;
 public class MainPage {
     private final WebDriver driver;
 
-    protected final By notFoundImage = By.cssSelector("img[alt='Not found']");
+
     protected final By goButton = By.cssSelector(".Header_Button__28dPO");
     protected final By inputOrder = By.xpath(".//input[contains(@class,'Input_Input__1iN_Z')]");
     protected final By status = By.className("Header_Link__1TAG7");
@@ -21,16 +21,11 @@ public class MainPage {
         this.driver = driver;
     }
 
-    public void checkNotFoundMessage() {
-        new WebDriverWait(driver, Duration.ofSeconds(15))
-                .until(ExpectedConditions.visibilityOfElementLocated(notFoundImage));
-        assertTrue(driver.findElement(notFoundImage).isDisplayed());
-    }
-
-    public void clickOnGoButton() {
+    public StatusPage clickOnGoButton() {
         new WebDriverWait(driver, Duration.ofSeconds(15))
                 .until(ExpectedConditions.visibilityOfElementLocated(goButton));
         driver.findElement(goButton).click();
+        return new StatusPage(driver);
     }
 
     public void typeOrderId() {
