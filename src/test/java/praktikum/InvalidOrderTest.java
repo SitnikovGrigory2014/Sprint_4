@@ -5,12 +5,12 @@ import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import praktikum.pages.MainPage;
 
-public class SampleWebTest {
+public class InvalidOrderTest {
     @Rule
     public DriverRule factory = new DriverRule();
 
     @Test
-    public void openMainPage() throws Exception {
+    public void openMainPage() {
         WebDriver driver = factory.getDriver();
 
         var mainPage = new MainPage(driver);

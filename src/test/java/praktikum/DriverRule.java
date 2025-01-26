@@ -11,7 +11,7 @@ import java.time.Duration;
 public class DriverRule extends ExternalResource {
     private WebDriver driver;
 
-    public void initDriver() throws Exception{
+    public void initDriver() {
         if ("firefox".equalsIgnoreCase(System.getProperty("browser"))) {
             startUpFireFox();
         } else {

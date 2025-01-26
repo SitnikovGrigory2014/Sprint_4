@@ -8,8 +8,6 @@ import praktikum.EnvConfig;
 
 import java.time.Duration;
 
-import static org.junit.Assert.assertTrue;
-
 public class MainPage {
     private final WebDriver driver;
 
