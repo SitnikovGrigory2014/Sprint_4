@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import praktikum.EnvConfig;
 
 import java.time.Duration;
 
@@ -11,7 +12,6 @@ import static org.junit.Assert.assertTrue;
 
 public class MainPage {
     private final WebDriver driver;
-
 
     protected final By goButton = By.cssSelector(".Header_Button__28dPO");
     protected final By inputOrder = By.xpath(".//input[contains(@class,'Input_Input__1iN_Z')]");
@@ -22,14 +22,14 @@ public class MainPage {
     }
 
     public StatusPage clickOnGoButton() {
-        new WebDriverWait(driver, Duration.ofSeconds(15))
+        new WebDriverWait(driver, Duration.ofSeconds(EnvConfig.EXPLICIT_WAIT))
                 .until(ExpectedConditions.visibilityOfElementLocated(goButton));
         driver.findElement(goButton).click();
         return new StatusPage(driver);
     }
 
-    public void typeOrderId() {
-        driver.findElement(inputOrder).sendKeys("123");
+    public void typeOrderId(String orderId) {
+        driver.findElement(inputOrder).sendKeys(orderId);
     }
 
     public void clickOnStatus() {
@@ -37,6 +37,6 @@ public class MainPage {
     }
 
     public void openMainPage() {
-        driver.get("https://qa-scooter.praktikum-services.ru/");
+        driver.get(EnvConfig.BASE_URL);
     }
 }

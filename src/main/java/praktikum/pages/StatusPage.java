@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import praktikum.EnvConfig;
 
 import java.time.Duration;
 
@@ -17,7 +18,7 @@ public class StatusPage {
         this.driver = driver;
     }
     public void checkNotFoundMessage() {
-        new WebDriverWait(driver, Duration.ofSeconds(15))
+        new WebDriverWait(driver, Duration.ofSeconds(EnvConfig.EXPLICIT_WAIT))
                 .until(ExpectedConditions.visibilityOfElementLocated(notFoundImage));
         assertTrue(driver.findElement(notFoundImage).isDisplayed());
     }}

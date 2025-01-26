@@ -19,7 +19,8 @@ public class SampleWebTest {
 
         mainPage.clickOnStatus();
 
-        mainPage.typeOrderId();
+        String invalidId = "123";
+        mainPage.typeOrderId(invalidId);
 
         var statusPage = mainPage.clickOnGoButton();
 
