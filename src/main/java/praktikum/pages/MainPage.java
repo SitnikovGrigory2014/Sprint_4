@@ -11,8 +11,11 @@ import java.time.Duration;
 public class MainPage {
     private final WebDriver driver;
 
+    //Кнопка "Go"
     protected final By goButton = By.cssSelector(".Header_Button__28dPO");
+    //Поле ввода номера заказа
     protected final By inputOrder = By.xpath(".//input[contains(@class,'Input_Input__1iN_Z')]");
+    //Кнопка "Статус заказа"
     protected final By status = By.className("Header_Link__1TAG7");
 
     public MainPage(WebDriver driver){

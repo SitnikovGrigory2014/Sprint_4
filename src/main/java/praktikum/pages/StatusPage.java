@@ -12,6 +12,7 @@ import static org.junit.Assert.assertTrue;
 
 public class StatusPage {
     private final WebDriver driver;
+    //Изображение с сообщением Заказ не найден
     protected final By notFoundImage = By.cssSelector("img[alt='Not found']");
 
     public StatusPage(WebDriver driver) {

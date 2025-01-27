@@ -119,6 +119,7 @@ public class CreateOrderPage {
 
     public CreateOrderPage selectMetro(String id){
         driver.findElement(metroInput).click();
+        //Элемент из выпадающего списка станций метро
         final By metroList = By.xpath(".//li[@data-index='" + id + "']");
         new WebDriverWait(driver, Duration.ofSeconds(EnvConfig.EXPLICIT_WAIT))
                 .until(ExpectedConditions.visibilityOfElementLocated(metroList));
@@ -138,17 +139,20 @@ public class CreateOrderPage {
 
     public CreateOrderPage selectDate(String id){
         driver.findElement(dateInput).click();
+        //День из выпадающего Календаря
         driver.findElement(By.cssSelector(".react-datepicker__day--0" + id)).click();
         return this;
     }
 
     public CreateOrderPage selectRentPeriod(String id){
         driver.findElement(rentPeriodInput).click();
+        //Элемент из выпадающего списка сроков аренды
         driver.findElement(By.cssSelector("div.Dropdown-option:nth-child(" + id + ")")).click();
         return this;
     }
 
     public CreateOrderPage selectColor(String color){
+        //Чек бокс с выбором цвета самоката
         driver.findElement(By.cssSelector("#"+ color)).click();
         return this;
     }
